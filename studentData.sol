@@ -32,4 +32,13 @@ contract studentData{
     function getLengthOfStudents() public view returns (uint){
         return studentArr.length;
     }
+
+    fallback() external payable{
+        revert("Fallback Called");
+    }
+
+    receive() external payable{
+        revert("Receive Called");
+    }
+
 }
